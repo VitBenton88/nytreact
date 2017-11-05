@@ -5,7 +5,7 @@ const db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
-  // find all stored articles
+    // find all stored articles
     app.get("/saved", function(req, res) {
         db.Article
             .find({})
@@ -59,6 +59,11 @@ module.exports = function(app) {
                 console.log(err);
                 res.send(false);
             });
+    });
+
+    // redirect any route to homepage
+    app.get("/*", function(req, res) {
+        res.sendFile(path.join(__dirname, "public/index.html"));
     });
 
 };
