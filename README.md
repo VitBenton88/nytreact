@@ -7,4 +7,5 @@ React-based article search application powered by the New York Times API. This a
 * Node.js
 * Express
 * MongoDB
+* Mongoose
 * Axios
