@@ -34,10 +34,7 @@ module.exports = function(app) {
             .create(newArticle)
             .then(function(dbComment) {
 
-                db.Article.findOneAndUpdate({ _id: articleID }, { $push: { comments: dbComment._id } }, function() {
-                    res.send(true);
-                });
-
+                res.send(true);
 
             })
             .catch(function(err) {
@@ -50,10 +47,10 @@ module.exports = function(app) {
     //delete articles in DB
     app.delete("/saved", function(req, res) {
 
-        var comment = req.params.id;
+        const article_id = req.body.id;
 
         db.Comment
-            .deleteOne({ _id: comment })
+            .deleteOne({ _id: article_id })
             .then(function(dbComment) {
                 res.redirect("/");
             })
@@ -64,9 +61,4 @@ module.exports = function(app) {
             });
     });
 
-    //get request to delete
-    app.get("/about", function(req, res) {
-
-        res.render("about");
-    });
 };
