@@ -1,8 +1,11 @@
 import React from "react";
+import Jumbotron from "./Jumbotron";
+import Nav from "./Nav";
 
-const Main = () => 
-  <div className="jumbotron">
-    <h1 className="text-center"><strong><i className="fa fa-newspaper-o"></i> New York Times Search with React</strong></h1>
-  </div>
-
+const Main = () =>(
+	<div>
+		<Nav />
+		<Jumbotron />
+	</div>
+)
 export default Main;
