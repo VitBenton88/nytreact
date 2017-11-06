@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Articles from './Articles';
+import Main from "./components/Main/Main";
 
-const App = () => (<Articles/>);
+const App = () => (<Main />);
 
 export default App;
