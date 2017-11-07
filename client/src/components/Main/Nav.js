@@ -9,8 +9,8 @@ const Nav = () =>
 	      <a class="navbar-brand" href="/">NYT-React</a>
 	    </div>
 	    <ul class="nav navbar-nav navbar-right">
-	      <li><a href="#">Search</a></li>
-	      <li><a href="#">Saved Articles</a></li>
+	      <li className={window.location.pathname === "/" ? "active" : ""}><a href="/">Search</a></li>
+	      <li className={window.location.pathname === "/saved" ? "active" : ""}><a href="/saved">Saved Articles</a></li>
 	    </ul>
 	  </div>
 	</nav>

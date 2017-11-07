@@ -10,14 +10,18 @@ class Search extends Component {
     results: []
   };
 
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
   handleFormSubmit = event => {
     event.preventDefault();
-    this.setState({ search: event.target.value, startYear: event.target.value, endYear: event.target.value });
-    API(this.state.search, this.state.startYear, this.state.endYear,)
-       .then(res => {
-        this.setState({ results: res });
-      })
-   };
+    API(this.state.search, this.state.startYear, this.state.endYear)
+    .then(res => this.setState({ results: res.data.response.docs }))
+ };
 
   render() {
     return (
@@ -31,6 +35,8 @@ class Search extends Component {
 				      <label>Topic:</label>
 				      <input
 				        type="text"
+				        name="search"
+				        onChange={this.handleInputChange}
 				        className="form-control"
 				        placeholder="Topic ..."
 				      />
@@ -39,6 +45,8 @@ class Search extends Component {
 				      <label>Start Year:</label>
 				      <input
 				        type="text"
+				        name="startYear"
+				        onChange={this.handleInputChange}
 				        className="form-control"
 				        placeholder="Start Year ..."
 				      />
@@ -47,6 +55,8 @@ class Search extends Component {
 				      <label>End Year:</label>
 				      <input
 				        type="text"
+				        name="endYear"
+				        onChange={this.handleInputChange}
 				        className="form-control"
 				        placeholder="End Year ..."
 				      />
