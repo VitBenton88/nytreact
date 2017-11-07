@@ -19,7 +19,7 @@ class Search extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API(this.state.search, this.state.startYear, this.state.endYear)
+    API.nyAPI(this.state.search, this.state.startYear, this.state.endYear)
     .then(res => {
 	    const articlesArr = res.data.response.docs;
 	    console.log(articlesArr);
@@ -27,13 +27,39 @@ class Search extends Component {
 	});
  };
 
+ confirmSave = () => {
+ 	alert("Article Saved!")
+ };
+
+ saveArticle = event => {
+
+ 	const title = event.target.key;
+ 	const arr = this.state.results;
+ 	let article;
+ 	console.log(title);
+
+ 	for (let i = 0; i < arr; i++) {
+ 		if (arr[i].headline.main == title){
+ 			article = {
+ 				title: arr[i].headline.main,
+ 				date: arr[i].pub_date,
+ 				url: arr[i].web_url
+ 			}
+ 		}
+ 	}
+
+    API.saveArticle(article)
+      .then(res => this.confirmSave())
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
     <div>
 	    <div className="container">
 		    <div className="panel panel-default">
-		     <div class="panel-heading"><i class="fa fa-search" aria-hidden="true"></i> Search</div>
-		     <div class="panel-body">
+		     <div className="panel-heading"><i className="fa fa-search" aria-hidden="true"></i> Search</div>
+		     <div className="panel-body">
 			    <form className="search">
 				 	<div className="form-group">
 				      <label>Topic:</label>
@@ -77,7 +103,10 @@ class Search extends Component {
 
 		<div className="container">
 			<div className="panel panel-default">
-				<SearchResults results={this.state.results} />
+				<SearchResults 
+				results={this.state.results}
+				onClick={this.saveArticle}
+				/>
 			</div>
 		</div>
 

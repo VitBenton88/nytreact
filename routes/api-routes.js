@@ -22,7 +22,7 @@ module.exports = function(app) {
     });
 
     //save article to db
-    app.post("/saved", function(req, res) {
+    app.post("/save", function(req, res) {
 
         const title = req.body.title;
         const date = req.body.date;

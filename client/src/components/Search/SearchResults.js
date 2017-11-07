@@ -2,18 +2,18 @@ import React, { Component } from "react";
 import './SearchResults.css';
 
 const SearchResults = props =>
-<div className="container">
+<div>
 <div className="panel-heading">
 	<h1 className="panel-title">Results</h1>
 </div>
 <div className="panel-body">
 {props.results.map(result =>
-  <ul className="list-group search-results">
-      <li key={result.headline.main} className="list-group-item">
+  <ul key={result.headline.main} className="list-group search-results">
+      <li className="list-group-item">
         <h2><i>{result.headline.main}</i></h2>
         <p>Date Published: {result.pub_date}</p>
-        <button className="btn btn-success"><a href={result.web_url} target="_blank">View Article</a></button>
-        <button className="btn btn-default saveBtn">Save</button>
+       <a href={result.web_url} target="_blank"><button className="btn btn-success">View Article</button></a>
+        <button className="btn btn-default saveBtn" onClick={props.saveArticle}>Save</button>
       </li>
   </ul>
     )}

@@ -1,7 +1,11 @@
 .search-results {
-	width: 95%;
+	width: 98%;
 }
 
 button a {
 	color: white;
+}
+
+.saveBtn {
+	margin-left: 5px;
 }
