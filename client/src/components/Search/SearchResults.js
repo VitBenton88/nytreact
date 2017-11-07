@@ -3,6 +3,7 @@ import './SearchResults.css';
 
 const SearchResults = props =>
 <div>
+{console.log(props)}
 <div className="panel-heading">
 	<h1 className="panel-title">Results</h1>
 </div>
@@ -13,7 +14,7 @@ const SearchResults = props =>
         <h2><i>{result.headline.main}</i></h2>
         <p>Date Published: {result.pub_date}</p>
        <a href={result.web_url} target="_blank"><button className="btn btn-success">View Article</button></a>
-        <button className="btn btn-default saveBtn" onClick={props.saveArticle}>Save</button>
+        <button onClick={props.onClick(result.headline.main)} className="btn btn-default saveBtn">Save</button>
       </li>
   </ul>
     )}

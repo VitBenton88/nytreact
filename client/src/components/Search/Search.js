@@ -31,15 +31,15 @@ class Search extends Component {
  	alert("Article Saved!")
  };
 
- saveArticle = event => {
+ saveArticle = title => {
 
- 	const title = event.target.key;
+ 	const headline = title;
  	const arr = this.state.results;
  	let article;
  	console.log(title);
 
  	for (let i = 0; i < arr; i++) {
- 		if (arr[i].headline.main == title){
+ 		if (arr[i].headline.main == headline){
  			article = {
  				title: arr[i].headline.main,
  				date: arr[i].pub_date,
