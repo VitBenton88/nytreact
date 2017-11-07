@@ -20,7 +20,11 @@ class Search extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     API(this.state.search, this.state.startYear, this.state.endYear)
-    .then(res => this.setState({ results: res.data.response.docs }))
+    .then(res => {
+	    const articlesArr = res.data.response.docs;
+	    console.log(articlesArr);
+	    this.setState({ results: articlesArr });
+	});
  };
 
   render() {
