@@ -33,13 +33,12 @@ class Search extends Component {
 
  saveArticle = title => {
 
- 	const headline = title;
  	const arr = this.state.results;
- 	let article;
+ 	let article = {};
  	console.log(title);
 
  	for (let i = 0; i < arr; i++) {
- 		if (arr[i].headline.main == headline){
+ 		if (arr[i].headline.main == title){
  			article = {
  				title: arr[i].headline.main,
  				date: arr[i].pub_date,
@@ -94,7 +93,7 @@ class Search extends Component {
 				     <button
 				        type="submit"
 				        onClick={this.handleFormSubmit}
-				        className="btn btn-success"
+				        className="btn btn-info"
 				      >Search</button>
 			  </form>
 			  </div>

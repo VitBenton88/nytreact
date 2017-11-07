@@ -14,7 +14,7 @@ export default {
 		return axios.get(queryURL);
 	},
 
-	saveArticle: function (article){
+	saveArticle: function (article) {
 
 	  	return axios.post("/saved", article);
 	}
