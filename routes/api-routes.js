@@ -30,7 +30,7 @@ module.exports = function(app) {
 
         const newArticle = { title, date, url };
 
-        db.Comment
+        db.Article
             .create(newArticle)
             .then(function(dbComment) {
 
@@ -49,7 +49,7 @@ module.exports = function(app) {
 
         const article_id = req.body.id;
 
-        db.Comment
+        db.Article
             .deleteOne({ _id: article_id })
             .then(function(dbComment) {
                 res.redirect("/");

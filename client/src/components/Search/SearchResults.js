@@ -14,7 +14,7 @@ const SearchResults = props =>
         <h2><i>{result.headline.main}</i></h2>
         <p>Date Published: {result.pub_date}</p>
        <a href={result.web_url} target="_blank"><button className="btn btn-success">View Article</button></a>
-        <button onClick={props.onClick(result.headline.main)} className="btn btn-default saveBtn">Save</button>
+        <button data-title={result.headline.main} onClick={props.onClick} className="btn btn-default saveBtn">Save</button>
       </li>
   </ul>
     )}

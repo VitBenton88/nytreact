@@ -31,26 +31,27 @@ class Search extends Component {
  	alert("Article Saved!")
  };
 
- saveArticle = title => {
-
+ saveArticle = event => {
+ 	const title = event.target.getAttribute("data-title");
  	const arr = this.state.results;
- 	let article = {};
  	console.log(title);
 
  	for (let i = 0; i < arr; i++) {
  		if (arr[i].headline.main == title){
- 			article = {
- 				title: arr[i].headline.main,
- 				date: arr[i].pub_date,
- 				url: arr[i].web_url
- 			}
+ 			const article = {
+	 			title: arr[i].headline.main,
+	 			date: arr[i].pub_date,
+	 			url: arr[i].web_url
+	 		}
+
+	 		console.log(article);
+
+ 			API.saveArticle(article)		
+      		.then(res => this.confirmSave())
+     		 .catch(err => console.log(err));
+  };
  		}
  	}
-
-    API.saveArticle(article)
-      .then(res => this.confirmSave())
-      .catch(err => console.log(err));
-  };
 
   render() {
     return (
