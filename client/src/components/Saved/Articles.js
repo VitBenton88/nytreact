@@ -40,7 +40,11 @@ class Articles extends Component {
 		    <div className="panel panel-default">
 		     <div className="panel-heading"><i className="fa fa-floppy-o" aria-hidden="true"></i> Saved Articles</div>
 		     <div className="panel-body">
-		     	{this.state.articles.map(article =>
+          {this.state.articles.length === 0
+          ?
+          <h3>No saved articles ...</h3>
+          :
+		     	this.state.articles.map(article =>
 				  <ul key={article._id} className="list-group articles">
 				      <li className="list-group-item">
 				        <h2><i>{article.title}</i></h2>
