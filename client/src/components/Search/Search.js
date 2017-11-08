@@ -34,24 +34,26 @@ class Search extends Component {
  saveArticle = event => {
  	const title = event.target.getAttribute("data-title");
  	const arr = this.state.results;
+ 	console.log(arr);
  	console.log(title);
 
- 	for (let i = 0; i < arr; i++) {
- 		if (arr[i].headline.main == title){
+ 	for (let i = 0; i < arr.length; i++) {
+ 		if (arr[i].headline.main === title){
+
  			const article = {
 	 			title: arr[i].headline.main,
 	 			date: arr[i].pub_date,
 	 			url: arr[i].web_url
-	 		}
+	 		};
 
 	 		console.log(article);
 
  			API.saveArticle(article)		
       		.then(res => this.confirmSave())
      		 .catch(err => console.log(err));
-  };
- 		}
- 	}
+ 		};
+ 	};
+ };
 
   render() {
     return (

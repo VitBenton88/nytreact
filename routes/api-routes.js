@@ -24,15 +24,9 @@ module.exports = function(app) {
     //save article to db
     app.post("/saved", function(req, res) {
 
-        const title = req.body.title;
-        const date = req.body.date;
-        const url = req.body.url;
-
-        const newArticle = { title, date, url };
-
         db.Article
-            .create(newArticle)
-            .then(function(dbComment) {
+            .create(req.body)
+            .then(function(dbArticle) {
 
                 res.send(true);
 
