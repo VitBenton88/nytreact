@@ -17,5 +17,10 @@ export default {
 	saveArticle: function (article) {
 
 	  	return axios.post("/saved", article);
+	},
+
+	getArticles: function () {
+
+	  	return axios.get("/saved");
 	}
 };
