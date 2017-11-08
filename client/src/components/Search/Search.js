@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "./API";
+import API from "../utils/API";
 import SearchResults from "./SearchResults";
 
 class Search extends Component {
@@ -54,6 +54,8 @@ class Search extends Component {
     return (
     <div>
 	    <div className="container">
+	    <div class="panel-group">
+
 		    <div className="panel panel-default">
 		     <div className="panel-heading"><i className="fa fa-search" aria-hidden="true"></i> Search</div>
 		     <div className="panel-body">
@@ -96,14 +98,27 @@ class Search extends Component {
 			  </form>
 			  </div>
 			</div>
+			</div>
 		</div>
 
 		<div className="container">
-			<div className="panel panel-default">
-				<SearchResults 
-				results={this.state.results}
-				onClick={this.saveArticle}
-				/>
+			<div class="panel-group">
+				<div className="panel panel-default">
+				{this.state.results.length === 0
+					?
+					<div>
+						<div className="panel-heading">Results</div>
+						<div className="panel-body">
+							<h4>Submit a search to view results ...</h4>
+						</div>
+					</div>
+					:
+					<SearchResults 
+					results={this.state.results}
+					onClick={this.saveArticle}
+					/>
+				}
+				</div>
 			</div>
 		</div>
 

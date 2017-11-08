@@ -3,7 +3,6 @@ import './SearchResults.css';
 
 const SearchResults = props =>
 <div>
-{console.log(props)}
 <div className="panel-heading">
 	<h1 className="panel-title">Results</h1>
 </div>

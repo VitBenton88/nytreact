@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../Search/API";
+import API from "../utils/API";
 import './Articles.css';
 
 class Articles extends Component {
