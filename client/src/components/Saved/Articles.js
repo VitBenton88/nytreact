@@ -18,6 +18,20 @@ class Articles extends Component {
       .catch(err => console.log(err));
   };
 
+   confirmDelete = () => {
+ 	alert("Article Deleted!")
+ };
+
+    deleteArticle = event => {
+
+ 		const id = event.target.getAttribute("data-id");
+ 		const article = {id};
+
+ 			API.deleteArticle(article)		
+      		.then(res => this.loadArticles())
+     		 .catch(err => console.log(err));
+ };
+
 
   render() {
     return (
@@ -32,7 +46,7 @@ class Articles extends Component {
 				        <h2><i>{article.title}</i></h2>
 				        <p>Date Published: {article.date}</p>
 				       <a href={article.url} target="_blank"><button className="btn btn-success">View Article</button></a>
-				        <button data-title={article.title} className="btn btn-danger deleteBtn">Delete</button>
+				        <button data-id={article._id} onClick={this.deleteArticle} className="btn btn-danger deleteBtn">Delete</button>
 				      </li>
 				  </ul>
 				    )}

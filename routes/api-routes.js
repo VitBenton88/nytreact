@@ -1,6 +1,7 @@
 // Dependencies
 // =============================================================
 const db = require("../models");
+const path = require("path");
 
 // Routes
 // =============================================================
@@ -11,7 +12,6 @@ module.exports = function(app) {
             .find({})
             .then(function(dbArticle) {
                 // render results into handelbars view
-                console.log(dbArticle);
                 res.send(dbArticle);
             })
             .catch(function(err) {
@@ -39,14 +39,14 @@ module.exports = function(app) {
     });
 
     //delete articles in DB
-    app.delete("/saved", function(req, res) {
+    app.get("/delete/:id", function(req, res) {
 
-        const article_id = req.body.id;
+        const article_id = req.params.id;
 
         db.Article
             .deleteOne({ _id: article_id })
             .then(function(dbComment) {
-                res.redirect("/");
+                res.send(true);
             })
             .catch(function(err) {
                 // If an error occurred, send it to the client
