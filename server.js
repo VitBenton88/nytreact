@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+var methodOverride = require("method-override");
 
 // Require all models
 const db = require("./models");
@@ -9,6 +10,9 @@ const PORT = process.env.PORT || 3001;
 
 // Initialize Express
 const app = express();
+
+// Override with POST having ?_method=DELETE
+app.use(methodOverride("_method"));
 
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
