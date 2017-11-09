@@ -54,7 +54,7 @@ class Search extends Component {
     return (
     <div>
 	    <div className="container">
-	    <div class="panel-group">
+	    <div className="panel-group">
 
 		    <div className="panel panel-default">
 		     <div className="panel-heading"><i className="fa fa-search" aria-hidden="true"></i> Search</div>
@@ -102,7 +102,7 @@ class Search extends Component {
 		</div>
 
 		<div className="container">
-			<div class="panel-group">
+			<div className="panel-group">
 				<div className="panel panel-default">
 				{this.state.results.length === 0
 					?
