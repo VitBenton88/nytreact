@@ -26,6 +26,6 @@ export default {
 
 	deleteArticle: function (article) {
 
-	  	return axios.get(`/delete/${article.id}`);
+	  	return axios.delete(`/delete/${article.id}`);
 	}
 };

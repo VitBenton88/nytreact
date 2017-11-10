@@ -39,7 +39,7 @@ module.exports = function(app) {
     });
 
     //delete articles in DB
-    app.get("/delete/:id", function(req, res) {
+    app.delete("/delete/:id", function(req, res) {
 
         const article_id = req.params.id;
 
