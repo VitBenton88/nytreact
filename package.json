@@ -1,14 +1,15 @@
 {
   "name": "newsscraper",
   "version": "1.0.0",
-  "description": "Web app that lets users view and leave comments on the latest news. Using Mongoose and Cheerio, the app scrapes news from another site.",
+  "description": "React-based article search application powered by the New York Times API. This app uses React components with helper functions and utilizes the React mounting lifecycle to query and display articles based on user searches.",
   "main": "server.js",
   "scripts": {
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VitBenton88/NewsScraper.git"
+    "url": "git+https://github.com/VitBenton88/nytreact"
   },
   "author": "",
   "license": "ISC",
@@ -17,9 +18,9 @@
     "nodemon": "^1.11.0"
   },
   "bugs": {
-    "url": "https://github.com/VitBenton88/NewsScraper/issues"
+    "url": "https://github.com/VitBenton88/nytreact/issues"
   },
-  "homepage": "https://github.com/VitBenton88/NewsScraper#readme",
+  "homepage": "https://github.com/VitBenton88/nytreact#readme",
   "dependencies": {
     "axios": "^0.17.0",
     "body-parser": "^1.18.2",
