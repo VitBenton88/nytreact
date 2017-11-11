@@ -22,10 +22,9 @@ app.use(bodyParser.json());
 // Serve up static assets if in production
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
-} 
-// Add routes, both API and view
-// Use express.static to serve the public folder as a static directory
-app.use(express.static("public"));
+} else {
+	app.use(express.static("public"));
+};
 
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
