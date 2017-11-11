@@ -4,6 +4,10 @@
   "description": "React-based article search application powered by the New York Times API. This app uses React components with helper functions and utilizes the React mounting lifecycle to query and display articles based on user searches.",
   "main": "server.js",
   "scripts": {
+    "server": "node server.js",
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "build": "node scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,12 +25,11 @@
   },
   "homepage": "https://github.com/VitBenton88/nytreact#readme",
   "dependencies": {
-    "axios": "^0.17.0",
-    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.0",
     "express": "^4.16.2",
     "method-override": "^2.3.10",
     "mongoose": "^4.12.4",
-    "path": "^0.12.7",
-    "react-router-dom": "^4.2.2"
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7"
   }
 }
