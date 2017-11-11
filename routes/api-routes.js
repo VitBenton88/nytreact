@@ -57,7 +57,7 @@ module.exports = function(app) {
 
     // redirect any route to homepage
     app.get('*', (req, res) => {
-      res.sendFile('./client/build/index.html');
+      res.sendFile(path.join(__dirname, '/client/build/index.html'));
     });
 
 };
