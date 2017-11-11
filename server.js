@@ -18,8 +18,11 @@ app.use(methodOverride("_method"));
 // Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// Serve up static assets
-app.use(express.static("client/build"));
+
+// Serve up static assets if in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+} 
 // Add routes, both API and view
 // Use express.static to serve the public folder as a static directory
 app.use(express.static("public"));
