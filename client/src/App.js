@@ -3,11 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Main from "./components/Main/Main";
 import Saved from "./components/Saved/Saved";
 
-class App extends Component {
-static propTypes = {
-  children: PropTypes.node
-}
-
 const App = () =>
 <Router>
     <div>
