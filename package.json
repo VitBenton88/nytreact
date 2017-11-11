@@ -4,10 +4,6 @@
   "description": "React-based article search application powered by the New York Times API. This app uses React components with helper functions and utilizes the React mounting lifecycle to query and display articles based on user searches.",
   "main": "server.js",
   "scripts": {
-    "server": "node server.js",
-    "client": "node scripts/start-client.js",
-    "start": "npm run client",
-    "build": "node scripts/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
