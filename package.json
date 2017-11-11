@@ -25,11 +25,8 @@
   },
   "homepage": "https://github.com/VitBenton88/nytreact#readme",
   "dependencies": {
-    "concurrently": "^3.5.0",
     "express": "^4.16.2",
-    "method-override": "^2.3.10",
-    "mongoose": "^4.12.4",
-    "nodemon": "^1.11.0",
-    "path": "^0.12.7"
+    "mongoose": "^4.12.4"
+
   }
 }
