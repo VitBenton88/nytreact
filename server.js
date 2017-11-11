@@ -6,7 +6,7 @@ var methodOverride = require("method-override");
 // Require all models
 const db = require("./models");
 
-//establish port
+//Establish Local and Production Port
 const PORT = process.env.PORT || 3001;
 
 // Initialize Express
