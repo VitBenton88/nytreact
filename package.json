@@ -1,5 +1,5 @@
 {
-  "name": "newsscraper",
+  "name": "nytreact",
   "version": "1.0.0",
   "description": "React-based article search application powered by the New York Times API. This app uses React components with helper functions and utilizes the React mounting lifecycle to query and display articles based on user searches.",
   "main": "server.js",
